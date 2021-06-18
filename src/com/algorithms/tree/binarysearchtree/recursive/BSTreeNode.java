@@ -1,4 +1,4 @@
-package com.algorithms.tree.binarysearchtree;
+package com.algorithms.tree.binarysearchtree.recursive;
 
 public class BSTreeNode {
 

@@ -1,4 +1,4 @@
-package com.algorithms.tree.binarysearchtree;
+package com.algorithms.tree.binarysearchtree.recursive;
 
 public class BSTree {
 
@@ -36,7 +36,7 @@ public class BSTree {
 			System.out.println("This is an empty tree");
 		}
 	}
-	
+
 	public void preOrderTraversal() {
 		if (root != null) {
 			root.preOrderTraversal();
@@ -44,7 +44,7 @@ public class BSTree {
 			System.out.println("This is an empty tree");
 		}
 	}
-	
+
 	public void postOrderTraversal() {
 		if (root != null) {
 			root.postOrderTraversal();
@@ -104,6 +104,29 @@ public class BSTree {
 		System.out.println("subTreeRoot data = " + subTreeRoot.getData());
 		return subTreeRoot;
 
+	}
+
+	private boolean validateBSTNodes(BSTreeNode subRoot, int minValue, int maxValue) {
+		System.out
+				.println("subRoot = " + subRoot.getData() + " : minValue = " + minValue + " : maxValue = " + maxValue);
+		if (subRoot.getData() < minValue || subRoot.getData() >= maxValue) {
+			return false;
+		}
+
+		if (subRoot.leftNode != null && !validateBSTNodes(subRoot.leftNode, minValue, subRoot.getData())) {
+			return false;
+		}
+
+		if (subRoot.rightNode != null && !validateBSTNodes(subRoot.rightNode, subRoot.getData(), maxValue)) {
+			return false;
+		}
+
+		return true;
+	}
+
+	public boolean validateBST() {
+
+		return validateBSTNodes(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
 	}
 
 }
