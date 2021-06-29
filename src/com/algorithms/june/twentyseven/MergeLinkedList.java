@@ -1,22 +1,8 @@
-package com.algorithms.june.twentysix;
+package com.algorithms.june.twentyseven;
 
 import java.util.ArrayList;
 import java.util.List;
 
-class LinkedList {
-	int value;
-	LinkedList next;
-
-	LinkedList(int value) {
-		this.value = value;
-		this.next = null;
-	}
-
-	@Override
-	public String toString() {
-		return "LinkedList [value=" + value + ", next=" + next + "]";
-	}
-}
 
 public class MergeLinkedList {
 

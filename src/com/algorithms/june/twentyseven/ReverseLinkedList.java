@@ -1,18 +1,8 @@
 package com.algorithms.june.twentyseven;
 
-class SingleLinkedList {
-	int value;
-	SingleLinkedList next;
-
-	SingleLinkedList(int value) {
-		this.value = value;
-		this.next = null;
-	}
-}
-
 public class ReverseLinkedList {
 
-	private static SingleLinkedList head;
+	private static LinkedList head;
 
 	public static void main(String[] args) {
 		createdLinkedList();
@@ -23,12 +13,12 @@ public class ReverseLinkedList {
 		printLinkedList();
 	}
 
-	private static SingleLinkedList reverseLinkedList() {
-		SingleLinkedList p1 = null;
-		SingleLinkedList p2 = head;
+	private static LinkedList reverseLinkedList() {
+		LinkedList p1 = null;
+		LinkedList p2 = head;
 
 		while (p2 != null) {
-			SingleLinkedList p3 = null;
+			LinkedList p3 = null;
 			p3 = p2.next;
 			p2.next = p1;
 			p1 = p2;
@@ -39,7 +29,7 @@ public class ReverseLinkedList {
 	}
 
 	private static void printLinkedList() {
-		SingleLinkedList current = head;
+		LinkedList current = head;
 		System.out.print("Head-->");
 		while (current != null) {
 			System.out.print(current.value + "-->");
@@ -51,13 +41,13 @@ public class ReverseLinkedList {
 	private static void createdLinkedList() {
 		for (int i = 0; i < 11; i++) {
 			if (head == null) {
-				head = new SingleLinkedList(i);
+				head = new LinkedList(i);
 			} else {
-				SingleLinkedList current = head;
+				LinkedList current = head;
 				while (current.next != null) {
 					current = current.next;
 				}
-				current.next = new SingleLinkedList(i);
+				current.next = new LinkedList(i);
 			}
 		}
 
